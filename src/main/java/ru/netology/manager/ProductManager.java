@@ -24,7 +24,7 @@ public class ProductManager {
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 int lastIndex = tmp.length - 1;
 
-                tmp[tmp.length - 1] = product;
+                tmp[lastIndex] = product;
                 result = tmp;
             }
         }
@@ -33,7 +33,6 @@ public class ProductManager {
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
-            Book book = (Book) product;
             if (((Book) product).getAuthor().contains(search)) {
                 return true;
             }
@@ -43,7 +42,6 @@ public class ProductManager {
             return false;
         }
         if (product instanceof Smartphone) {
-            Smartphone smartphone = (Smartphone) product;
             if (((Smartphone) product).getManufacturer().contains(search)) {
                 return true;
             }

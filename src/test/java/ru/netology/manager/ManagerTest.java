@@ -72,4 +72,12 @@ public class ManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSearchFindNothing() {
+        Product[] expected = new Product[]{};
+        Product[] actual = manager.searchBy("Жизнь в удовольствие");
+
+        assertArrayEquals(expected, actual);
+    }
+
 }
